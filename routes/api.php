@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\EmployeeController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\SalesOrderController;
 use Illuminate\Http\Request;
@@ -29,3 +30,5 @@ Route::group(['prefix' => 'products'], function () {
 Route::group(['prefix' => 'sales-orders'], function () {
     Route::get('/{custId}', [SalesOrderController::class, 'salesOrderByCustomer']);
 });
+
+Route::put('/employees/{id}', [EmployeeController::class, 'update']);

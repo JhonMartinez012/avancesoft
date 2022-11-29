@@ -9,7 +9,9 @@ class Employee extends Model
 {
     use HasFactory;
 
+    const UPDATED_AT = null; // desabilita el campo updated_at
     protected $table = 'employee';
+
 
     protected $fillable = [
         'employeeId',
