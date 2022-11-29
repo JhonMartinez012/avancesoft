@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\SalesOrderController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -23,4 +24,8 @@ use Illuminate\Support\Facades\Route;
 
 Route::group(['prefix' => 'products'], function () {
     Route::get('/', [ProductController::class, 'index']);
+});
+
+Route::group(['prefix' => 'sales-orders'], function () {
+    Route::get('/{custId}', [SalesOrderController::class, 'salesOrderByCustomer']);
 });
